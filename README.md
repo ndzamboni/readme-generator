@@ -30,10 +30,10 @@ This app was created by Nick Zamboni
 To test this application, there are error prompts in place to notify the user if something doesn't work. Otherwise, clone the repository and run the app to test. You can use commandline to test.
 
 ## Screenshots
-![Screenshot 1](assets/Capture1.png)
-![Screenshot 2](assets/Capture2.png)
-![Screenshot 3](assets/Capture3.png)
-![Screenshot 4](assets/Capture4.png)
+![Screenshot 1](./assets/Capture1.png)
+![Screenshot 2](./assets/Capture2.png)
+![Screenshot 3](./assets/Capture3.png)
+![Screenshot 4](./assets/Capture4.png)
 
 ## Questions
 If you have any questions, please open an issue or contact me via email at [ndzamboni@gmail.com](mailto:ndzamboni@gmail.com).
