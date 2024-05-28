@@ -1,8 +1,8 @@
 
-# Professional ReadMe Generator
+# README Generator
 
 ## Description
-A backend script that asks user input to easily create a readme document
+This commandline app uses backend code to dynamically create a README file for any project!
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,19 +13,19 @@ A backend script that asks user input to easily create a readme document
 - [Questions](#questions)
 
 ## Installation
-npm inquirer, and "fs"
+npm install inquirer
 
 ## Usage
-Open the terminal then type "node index.mjs" then answer prompts to create readme
+type "node index.mjs" in the command line after navigating to the correct directory
 
 ## License
 This project is licensed under the MIT license.
 
 ## Contributing
-Single user contribution
+Created by Nick Zamboni using javascript. With help from copilot.
 
 ## Tests
-see usage information
+after cloning the repo be sure to run "npm install" to have the needed downloads. This is easily tested in commandline.
 
 ## Questions
 For any questions, please contact me at [ndzamboni@gmail.com](mailto:ndzamboni@gmail.com). You can also find me on GitHub at [ndzamboni](https://github.com/ndzamboni).
