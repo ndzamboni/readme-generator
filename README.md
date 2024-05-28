@@ -1,8 +1,9 @@
+# Professional README GENERATOR
 
-# README Generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This commandline app uses backend code to dynamically create a README file for any project!
+This app uses commandline and backend code to dynamically create a README for any project!
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,19 +14,20 @@ This commandline app uses backend code to dynamically create a README file for a
 - [Questions](#questions)
 
 ## Installation
-npm install inquirer
+"npm install inquirer"
 
 ## Usage
-type "node index.mjs" in the command line after navigating to the correct directory
+This app is able to be reused and is available for anyone to use. Simply clone the repository, run "npm install", then "node index.mjs"
 
 ## License
-This project is licensed under the MIT license.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
-Created by Nick Zamboni using javascript. With help from copilot.
+This app was created by Nick Zamboni
 
 ## Tests
-after cloning the repo be sure to run "npm install" to have the needed downloads. This is easily tested in commandline.
+To test this application, there are error prompts in place to notify the user if something doesn't work. Otherwise, clone the repository and run the app to test. You can use commandline to test. 
 
 ## Questions
-For any questions, please contact me at [ndzamboni@gmail.com](mailto:ndzamboni@gmail.com). You can also find me on GitHub at [ndzamboni](https://github.com/ndzamboni).
+If you have any questions, please open an issue or contact me via email at [ndzamboni@gmail.com](mailto:ndzamboni@gmail.com).
+You can find more of my work at [ndzamboni](https://github.com/ndzamboni).

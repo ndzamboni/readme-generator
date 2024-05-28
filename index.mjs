@@ -1,62 +1,92 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
-// Questions array for user input
-const questions = [
+// Define a function to generate the license badge and link
+const getLicenseBadge = (license) => {
+  const badges = {
+    'MIT': `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
+    'GPLv3': `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`,
+    'Apache 2.0': `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`,
+    'BSD 3-Clause': `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`,
+    'None': ''
+  };
+  return badges[license];
+};
+
+// Define a function to generate the license section text
+const getLicenseText = (license) => {
+  const texts = {
+    'MIT': `This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.`,
+    'GPLv3': `This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) file for details.`,
+    'Apache 2.0': `This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.`,
+    'BSD 3-Clause': `This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details.`,
+    'None': 'This project is not licensed.'
+  };
+  return texts[license];
+};
+
+// Prompt the user for input using Inquirer
+inquirer.prompt([
   {
     type: 'input',
     name: 'title',
-    message: 'What is the title of your project?',
+    message: 'What is the title of your project?'
   },
   {
     type: 'input',
     name: 'description',
-    message: 'Provide a description of your project:',
+    message: 'Provide a description of your project:'
   },
   {
     type: 'input',
     name: 'installation',
-    message: 'Provide installation instructions:',
+    message: 'Provide installation instructions:'
   },
   {
     type: 'input',
     name: 'usage',
-    message: 'Provide usage information:',
+    message: 'Provide usage information:'
   },
   {
     type: 'input',
     name: 'contributing',
-    message: 'Provide contribution guidelines:',
+    message: 'Provide contribution guidelines:'
   },
   {
     type: 'input',
     name: 'tests',
-    message: 'Provide test instructions:',
+    message: 'Provide test instructions:'
   },
   {
     type: 'list',
     name: 'license',
     message: 'Choose a license for your project:',
-    choices: ['MIT', 'GPLv2', 'Apache', 'None'],
+    choices: ['MIT', 'GPLv3', 'Apache 2.0', 'BSD 3-Clause', 'None']
   },
   {
     type: 'input',
     name: 'github',
-    message: 'Enter your GitHub username:',
+    message: 'Enter your GitHub username:'
   },
   {
     type: 'input',
     name: 'email',
-    message: 'Enter your email address:',
-  },
-];
+    message: 'Enter your email address:'
+  }
+]).then((answers) => {
+  const { title, description, installation, usage, contributing, tests, license, github, email } = answers;
 
-// Function to generate README content
-const generateREADME = (answers) => `
-# ${answers.title}
+  const licenseBadge = getLicenseBadge(license);
+  const licenseText = getLicenseText(license);
+
+  // Generate the content of the README file
+  const readmeContent = `
+# ${title}
+
+${licenseBadge}
 
 ## Description
-${answers.description}
+${description}
 
 ## Table of Contents
 - [Installation](#installation)
@@ -67,32 +97,26 @@ ${answers.description}
 - [Questions](#questions)
 
 ## Installation
-${answers.installation}
+${installation}
 
 ## Usage
-${answers.usage}
+${usage}
 
 ## License
-This project is licensed under the ${answers.license} license.
+${licenseText}
 
 ## Contributing
-${answers.contributing}
+${contributing}
 
 ## Tests
-${answers.tests}
+${tests}
 
 ## Questions
-For any questions, please contact me at [${answers.email}](mailto:${answers.email}). You can also find me on GitHub at [${answers.github}](https://github.com/${answers.github}).
+If you have any questions, please open an issue or contact me via email at [${email}](mailto:${email}).
+You can find more of my work at [${github}](https://github.com/${github}).
 `;
 
-// Function to initialize program
-const init = () => {
-  inquirer.prompt(questions).then((answers) => {
-    const readmeContent = generateREADME(answers);
-    fs.writeFileSync('README.md', readmeContent);
-    console.log('README.md has been generated!');
-  });
-};
-
-// Initialize the program
-init();
+  // Write the README file
+  fs.writeFileSync('README.md', readmeContent.trim());
+  console.log('README.md generated successfully!');
+});
