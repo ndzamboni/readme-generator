@@ -94,6 +94,7 @@ ${description}
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [Screenshots](#screenshots)
 - [Questions](#questions)
 
 ## Installation
@@ -110,6 +111,12 @@ ${contributing}
 
 ## Tests
 ${tests}
+
+## Screenshots
+![Screenshot 1](assets/Capture1.png)
+![Screenshot 2](assets/Capture2.png)
+![Screenshot 3](assets/Capture3.png)
+![Screenshot 4](assets/Capture4.png)
 
 ## Questions
 If you have any questions, please open an issue or contact me via email at [${email}](mailto:${email}).
