@@ -1,9 +1,12 @@
-# Professional README GENERATOR
+# test
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This app uses commandline and backend code to dynamically create a README for any project!
+test
+
+## Badges
+[![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/) [![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)](https://expressjs.com/) [![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)](https://reactjs.org/) [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/) [![Inquirer](https://img.shields.io/badge/Inquirer-13805b?logo=inquirer&logoColor=white)](https://www.npmjs.com/package/inquirer)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -15,19 +18,19 @@ This app uses commandline and backend code to dynamically create a README for an
 - [Questions](#questions)
 
 ## Installation
-"npm install inquirer"
+test
 
 ## Usage
-This app is able to be reused and is available for anyone to use. Simply clone the repository, run "npm install", then "node index.mjs"
+test
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
-This app was created by Nick Zamboni
+test
 
 ## Tests
-To test this application, there are error prompts in place to notify the user if something doesn't work. Otherwise, clone the repository and run the app to test. You can use commandline to test.
+test
 
 ## Screenshots
 ![Screenshot 1](./assets/Capture1.png)
