@@ -25,6 +25,18 @@ const getLicenseText = (license) => {
   return texts[license];
 };
 
+// Define a function to generate tool badges
+const getToolBadges = (tools) => {
+  const toolBadges = {
+    'Node.js': `[![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)`,
+    'Express': `[![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)](https://expressjs.com/)`,
+    'React': `[![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)`,
+    'MongoDB': `[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)`,
+    'Inquirer': `[![Inquirer](https://img.shields.io/badge/Inquirer-13805b?logo=inquirer&logoColor=white)](https://www.npmjs.com/package/inquirer)`
+  };
+  return tools.map(tool => toolBadges[tool]).join(' ');
+};
+
 // Prompt the user for input using Inquirer
 inquirer.prompt([
   {
@@ -64,6 +76,12 @@ inquirer.prompt([
     choices: ['MIT', 'GPLv3', 'Apache 2.0', 'BSD 3-Clause', 'None']
   },
   {
+    type: 'checkbox',
+    name: 'tools',
+    message: 'Select the tools used in your project:',
+    choices: ['Node.js', 'Express', 'React', 'MongoDB', 'Inquirer']
+  },
+  {
     type: 'input',
     name: 'github',
     message: 'Enter your GitHub username:'
@@ -74,10 +92,11 @@ inquirer.prompt([
     message: 'Enter your email address:'
   }
 ]).then((answers) => {
-  const { title, description, installation, usage, contributing, tests, license, github, email } = answers;
+  const { title, description, installation, usage, contributing, tests, license, tools, github, email } = answers;
 
   const licenseBadge = getLicenseBadge(license);
   const licenseText = getLicenseText(license);
+  const toolBadges = getToolBadges(tools);
 
   // Generate the content of the README file
   const readmeContent = `
@@ -87,6 +106,9 @@ ${licenseBadge}
 
 ## Description
 ${description}
+
+## Badges
+${toolBadges}
 
 ## Table of Contents
 - [Installation](#installation)
